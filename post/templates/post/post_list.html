@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Postes{% endblock %}
+{% block content %}
+    <div class="d-flex justify-content-end">
+        <a type="button" class="btn btn-primary" href="{% url 'post:add_post' %}">New</a>
+    </div>
+
+    {% for post in post_list %}
+        <div class="card">
+            <div class="card-body">
+                This is some text within a card body.
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

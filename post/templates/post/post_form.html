@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}New Post{% endblock %}
+{% load widget_tweaks %}
+{% block content %}
+    {% if form.errors %}
+        <div class="container-fluid px-0">
+            <div class="alert alert-warning alert-dismissible fade show m-0" role="alert">
+                {% for field in form %}
+                    {% if field.errors %}{{ field.errors }}{% endif %}
+                {% endfor %}
+                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    {% endif %}
+
+    <form>
+        <div class="mb-3">
+            <label for="id_image" class="form-label">{{ form.image.label }}</label>
+            {% render_field form.image class+="form-control" id+="id_image" %}
+        </div>
+        <div class="mb-3">
+            <label for="id_type" class="form-label">{{ form.type.label }}</label>
+            {% render_field form.type class+="form-select" id+="id_type" %}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

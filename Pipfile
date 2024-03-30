@@ -9,6 +9,8 @@ python-dotenv = "*"
 django-allauth = "*"
 mysqlclient = "*"
 django-mysql = "*"
+pillow = "*"
+django-widget-tweaks = "*"
 
 [dev-packages]
 

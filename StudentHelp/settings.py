@@ -41,7 +41,18 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     "allauth",
+    "widget_tweaks",
+    "allauth.account",
+    "accounts",
+    "post",
+    "evenement",
+    "stage",
+    "logement",
+    "transport",
+    "recommendation",
 ]
+
+AUTH_USER_MODEL = 'accounts.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'StudentHelp.urls'
